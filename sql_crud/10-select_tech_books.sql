@@ -1,3 +1,3 @@
-SELECT title, author, price
+SELECT title, price, stock
 FROM books
-WHERE genre = 'Technology' OR published_year > 2000;
+WHERE genre = 'Tech' AND published_year > 2000;
