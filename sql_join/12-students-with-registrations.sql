@@ -1,6 +1,4 @@
-SELECT students.name as student_name, COUNT(registrations.course_id) as registration_count
+SELECT DISTINCT students.name AS student_name
 FROM students
-LEFT JOIN registrations ON students.id = registrations.student_id
-WHERE registrations.course_id IS NOT NULL
-GROUP BY students.id, students.name
-ORDER BY registration_count DESC, student_name ASC;
+JOIN registrations ON students.id = registrations.student_id
+ORDER BY student_name ASC;
